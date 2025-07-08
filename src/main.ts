@@ -11,8 +11,6 @@ document.addEventListener( 'DOMContentLoaded', () => {
 
 		direction: 'center',
 
-		// parent: '',
-
         onShow ( context: HTMLElement ) {
 
             gsap.fromTo( context, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'linear' });

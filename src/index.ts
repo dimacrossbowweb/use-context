@@ -1,4 +1,9 @@
 /**
+ * components
+ */
+export * from './components';
+
+/**
  * helpers
  */
 export * from './helpers';
