@@ -1,14 +1,14 @@
 .use-context {
 
-    display: flex;
-    flex-direction: column;
+    display: flex!important;
+    flex-direction: column!important;
 
-    position: fixed;
+    position: fixed!important;
 
-    box-sizing: border-box;
+    box-sizing: border-box!important;
 
-    max-width: 100vw;
-    max-height: 100dvh;
+    max-width: 100vw!important;
+    max-height: 100dvh!important;
 
     /* transition: all .1s; */
 
@@ -16,6 +16,6 @@
 
   .use-context_display_hide {
 
-    display: none;
+    display: none!important;
 
   }

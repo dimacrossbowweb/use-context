@@ -1,22 +1,22 @@
-import { type IContext } from '../../context/context.d';
+import { valueOf } from '../../../helpers';
 import { Position } from '../../../position';
-
 
 export function RightTopPosition (): Position {
 
 	return new Position( {
 
-		x: ( context: IContext ) => {
+		x: ( context: any ) => {
 
-			return context.activator.getBoundingClientRect().left
-				- context.parent.getBoundingClientRect().left
-				+ context.activator.getBoundingClientRect().width;
+			return valueOf( context?.activator?.getBoundingClientRect()?.left )
+				- valueOf( context?.parent?.getBoundingClientRect()?.left )
+				+ valueOf( context?.activator?.getBoundingClientRect()?.width );
 
 		},
 
-		y: ( context: IContext ) => {
+		y: ( context: any ) => {
 
-			return context.activator.getBoundingClientRect().top - context.parent.getBoundingClientRect().top;
+			return valueOf( context?.activator?.getBoundingClientRect()?.top )
+				- valueOf( context?.parent?.getBoundingClientRect()?.top );
 
 		},
 
@@ -26,9 +26,9 @@ export function RightTopPosition (): Position {
 
 		},
 
-		offsetY: ( context: IContext ) => {
+		offsetY: ( context: any ) => {
 
-			return -context.context.getBoundingClientRect().height;
+			return -valueOf( context?.context?.getBoundingClientRect()?.height );
 
 		},
 

@@ -1,10 +1,21 @@
 {
-  "name": "use-context",
-  "private": true,
-  "version": "0.0.1",
+  "name": "build-context-menu",
+  "version": "0.0.3",
   "type": "module",
   "author": "dimacrossbow",
   "license": "MIT",
+  "main": "dist/build-context-menu.umd.js",
+  "module": "dist/build-context-menu.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/build-context-menu.es.js",
+      "require": "./dist/build-context-menu.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimacrossbowweb/use-context"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -15,6 +26,7 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
-    "gsap": "^3.13.0"
+    "gsap": "^3.13.0",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   }
 }
