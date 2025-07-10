@@ -1,15 +1,14 @@
 import { valueOf } from '../../../helpers';
 import { Position } from '../../../position';
 
-export function RightBottomPosition (): Position {
+export function TopLeftPosition (): Position {
 
 	return new Position( {
 
 		x: ( context: any ) => {
 
 			return valueOf( context?.activator?.getBoundingClientRect()?.left )
-				- valueOf( context?.parent?.getBoundingClientRect()?.left )
-				+ valueOf( context?.activator?.getBoundingClientRect()?.width );
+				- valueOf( context?.parent?.getBoundingClientRect()?.left );
 
 		},
 
@@ -20,15 +19,15 @@ export function RightBottomPosition (): Position {
 
 		},
 
-		offsetX: () => {
+		offsetX: ( context: any ) => {
 
 			return 0;
 
 		},
 
-		offsetY: () => {
+		offsetY: ( context: any ) => {
 
-			return 0;
+			return -valueOf( context?.context?.getBoundingClientRect()?.height );
 
 		},
 

@@ -15,7 +15,8 @@ export function LeftTopPosition (): Position {
 		y: ( context: any ) => {
 
 			return valueOf( context?.activator?.getBoundingClientRect()?.top )
-				- valueOf( context?.parent?.getBoundingClientRect()?.top );
+				- valueOf( context?.parent?.getBoundingClientRect()?.top )
+				+ valueOf( context?.activator?.getBoundingClientRect()?.height );
 
 		},
 
