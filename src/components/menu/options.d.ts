@@ -3,8 +3,10 @@ import { type IContextOptions } from '../context/options.d';
 export const DIRECTIONS_LIST: string[] = [
 
 	'left-top', 'left-center', 'left-bottom',
-	'center-top', 'center', 'center-bottom',
-	'right-top', 'right-center', 'right-bottom'
+	'top-left', 'top-center', 'top-right',
+	'right-top', 'right-center', 'right-bottom',
+	'bottom-left', 'bottom-center', 'bottom-right',
+	'center',
 
 ];
 

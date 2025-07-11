@@ -21,13 +21,19 @@ import {
 	LeftCenterPosition,
 	LeftBottomPosition,
 
-	CenterTopPosition,
-	CenterPosition,
-	CenterBottomPosition,
-
 	RightTopPosition,
 	RightCenterPosition,
 	RightBottomPosition,
+
+	TopLeftPosition,
+	TopCenterPosition,
+	TopRightPosition,
+
+	BottomLeftPosition,
+	BottomCenterPosition,
+	BottomRightPosition,
+
+	CenterPosition,
 
 } from './suppoints';
 
@@ -64,7 +70,7 @@ export class Menu extends Context implements IMenu {
 
 			this._activator = activatorElement;
 
-			this._direction = options?.direction ?? 'left-top';
+			this._direction = options?.direction ?? 'bottom-left';
 
 			this.points = new Map([
 
@@ -72,17 +78,23 @@ export class Menu extends Context implements IMenu {
 				[ 'left-center', LeftCenterPosition() ],
 				[ 'left-bottom', LeftBottomPosition() ],
 
-				[ 'center-top', CenterTopPosition() ],
-				[ 'center', CenterPosition() ],
-				[ 'center-bottom', CenterBottomPosition() ],
-
 				[ 'right-top', RightTopPosition() ],
 				[ 'right-center', RightCenterPosition() ],
 				[ 'right-bottom', RightBottomPosition() ],
 
+				[ 'top-left', TopLeftPosition() ],
+				[ 'top-center', TopCenterPosition() ],
+				[ 'top-right', TopRightPosition() ],
+
+				[ 'bottom-left', BottomLeftPosition() ],
+				[ 'bottom-center', BottomCenterPosition() ],
+				[ 'bottom-right', BottomRightPosition() ],
+
+				[ 'center', CenterPosition() ],
+
 			]);
 
-			this.position = this.points.get( this._direction ) ?? CenterBottomPosition();
+			this.position = this.points.get( this._direction ) ?? BottomLeftPosition();
 
 			this.init();
 
@@ -203,7 +215,7 @@ export class Menu extends Context implements IMenu {
 
 			this._direction = value;
 
-			this.position = this.points.get( this._direction ) ?? CenterBottomPosition();
+			this.position = this.points.get( this._direction ) ?? BottomLeftPosition();
 
 			this.update();
 
