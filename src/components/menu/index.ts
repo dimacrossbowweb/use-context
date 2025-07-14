@@ -44,6 +44,9 @@ export class Menu extends Context implements IMenu {
 	private _activator!: HTMLElement;
 
 	private _direction!: TDirection;
+
+	private _marginX!: string | number;
+	private _marginY!: string | number;
 	
 	constructor (
 		
@@ -71,6 +74,9 @@ export class Menu extends Context implements IMenu {
 			this._activator = activatorElement;
 
 			this._direction = options?.direction ?? 'bottom-left';
+
+			this._marginX = options?.marginX ?? 0;
+			this._marginY = options?.marginY ?? 0;
 
 			this.points = new Map([
 
@@ -216,6 +222,70 @@ export class Menu extends Context implements IMenu {
 			this._direction = value;
 
 			this.position = this.points.get( this._direction ) ?? BottomLeftPosition();
+
+			this.update();
+
+		} catch ( e: unknown ) {
+
+			console.error( e );
+
+		}
+
+	}
+
+	get marginX (): number {
+
+		if ( typeof this.position.x === 'number' ) return this.position.x;
+
+		if ( typeof this.position.x === 'string' && !isNaN(+this.position.x) ) return +this.position.x;
+
+		return 0;
+
+	}
+
+	set marginX ( value: string | number ) {
+
+		try {
+
+			if ( ![ 'string', 'number' ].includes( typeof value ) ) {
+
+				throw new Error( 'Context -> setting marginX :: invalid value. Exprected number or function that returns number' );
+
+			}
+
+			this.position.marginX = value;
+
+			this.update();
+
+		} catch ( e: unknown ) {
+
+			console.error( e );
+
+		}
+
+	}
+
+	get marginY (): number {
+
+		if ( typeof this.position.y === 'number' ) return this.position.y;
+
+		if ( typeof this.position.y === 'string' && !isNaN(+this.position.y) ) return +this.position.y;
+
+		return 0;
+
+	}
+
+	set marginY ( value: string | number ) {
+
+		try {
+
+			if ( ![ 'string', 'number' ].includes( typeof value ) ) {
+
+				throw new Error( 'Context -> setting marginY :: invalid value. Exprected number or function that returns number' );
+
+			}
+
+			this.position.marginY = value;
 
 			this.update();
 

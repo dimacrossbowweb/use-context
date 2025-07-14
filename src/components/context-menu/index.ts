@@ -1,9 +1,9 @@
 import { Context } from '../context';
-import { type TContextMenuOptions } from './options.d';
+import { type IContextMenuOptions } from './options.d';
 
 export class ContextMenu extends Context {
 
-	constructor ( context: HTMLElement | string, options: Partial<TContextMenuOptions> ) {
+	constructor ( context: HTMLElement | string, options: Partial<IContextMenuOptions> ) {
 
 		super( context, options );
 

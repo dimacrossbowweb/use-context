@@ -21,15 +21,16 @@ export function RightCenterPosition (): Position {
 
 		},
 
-		offsetX: () => {
+		offsetX: ( context: any ) => {
 
-			return 0;
+			return valueOf( context?.marginX );
 
 		},
 
 		offsetY: ( context: any ) => {
 
-			return -valueOf( context?.context?.getBoundingClientRect()?.height ) / 2;
+			return -valueOf( context?.context?.getBoundingClientRect()?.height ) / 2
+				+ valueOf( context?.marginY );
 
 		},
 

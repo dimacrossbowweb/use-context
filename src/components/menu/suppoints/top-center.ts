@@ -22,13 +22,15 @@ export function TopCenterPosition (): Position {
 
 		offsetX: ( context: any ) => {
 
-			return -valueOf( context?.context?.getBoundingClientRect()?.width ) / 2;
+			return -valueOf( context?.context?.getBoundingClientRect()?.width ) / 2
+				+ valueOf( context?.marginX );
 
 		},
 
 		offsetY: ( context: any ) => {
 
-			return -valueOf( context?.context?.getBoundingClientRect()?.height );
+			return -valueOf( context?.context?.getBoundingClientRect()?.height )
+				+ valueOf( context?.marginY );
 
 		},
 

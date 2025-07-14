@@ -22,13 +22,13 @@ export function BottomLeftPosition (): Position {
 
 		offsetX: ( context: any ) => {
 
-			return 0;
+			return valueOf( context?.marginX );
 
 		},
 
 		offsetY: ( context: any ) => {
 
-			return 0;
+			return valueOf( context?.marginY );
 
 		},
 

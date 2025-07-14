@@ -20,15 +20,15 @@ export function RightBottomPosition (): Position {
 
 		},
 
-		offsetX: () => {
+		offsetX: ( context: any ) => {
 
-			return 0;
+			return valueOf( context?.marginX );
 
 		},
 
-		offsetY: () => {
+		offsetY: ( context: any ) => {
 
-			return 0;
+			return valueOf( context?.marginY );
 
 		},
 

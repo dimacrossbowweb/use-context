@@ -23,13 +23,15 @@ export function CenterPosition (): Position {
 
 		offsetX: ( context: any ) => {
 
-			return -valueOf( context?.context?.getBoundingClientRect()?.width ) / 2;
+			return -valueOf( context?.context?.getBoundingClientRect()?.width ) / 2
+				+ valueOf( context?.marginX );
 
 		},
 
 		offsetY: ( context: any ) => {
 
-			return -valueOf( context?.context?.getBoundingClientRect()?.height ) / 2;
+			return -valueOf( context?.context?.getBoundingClientRect()?.height ) / 2
+				+ valueOf( context?.marginY );
 
 		},
 

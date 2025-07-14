@@ -24,4 +24,14 @@ export interface IMenuOptions extends Omit<IContextOptions, 'x' | 'y'> {
 	 */
 	direction: TDirection;
 
+	/**
+	 * margin x
+	 */
+	marginX: string | number;
+
+	/**
+	 * margin y
+	 */
+	marginY: string | number;
+
 };

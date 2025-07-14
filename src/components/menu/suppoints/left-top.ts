@@ -22,13 +22,15 @@ export function LeftTopPosition (): Position {
 
 		offsetX: ( context: any ) => {
 
-			return -valueOf( context?.context?.getBoundingClientRect()?.width );
+			return -valueOf( context?.context?.getBoundingClientRect()?.width )
+				+ valueOf( context?.marginX );
 
 		},
 
 		offsetY: ( context: any ) => {
 
-			return -valueOf( context?.context?.getBoundingClientRect()?.height );
+			return -valueOf( context?.context?.getBoundingClientRect()?.height )
+				+ valueOf( context?.marginY );
 
 		},
 

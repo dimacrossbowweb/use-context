@@ -21,13 +21,14 @@ export function TopLeftPosition (): Position {
 
 		offsetX: ( context: any ) => {
 
-			return 0;
+			return valueOf( context?.marginX );
 
 		},
 
 		offsetY: ( context: any ) => {
 
-			return -valueOf( context?.context?.getBoundingClientRect()?.height );
+			return -valueOf( context?.context?.getBoundingClientRect()?.height )
+				+ valueOf( context?.marginY );
 
 		},
 

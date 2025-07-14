@@ -23,13 +23,14 @@ export function BottomRightPosition (): Position {
 
 		offsetX: ( context: any ) => {
 
-			return -valueOf( context?.context?.getBoundingClientRect()?.width );
+			return -valueOf( context?.context?.getBoundingClientRect()?.width )
+				+ valueOf( context?.marginX );
 
 		},
 
 		offsetY: ( context: any ) => {
 
-			return 0;
+			return valueOf( context?.marginY );
 
 		},
 
